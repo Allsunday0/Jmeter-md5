@@ -1,0 +1,11 @@
+import org.apache.commons.codec.digest.DigestUtils;
+
+String a = vars.get("a");
+String b = vars.get("b");
+
+String key_a=a+b;
+
+key_b=DigestUtils.md5Hex(key_a);
+key_c=DigestUtils.md5Hex(key_b);
+
+vars.put("sign",key_c);
